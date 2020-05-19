@@ -1,5 +1,6 @@
 <h1><%=@character.name%></h1>
 <p>Price: $<%= @character.price %>/day</p>
+<%= cl_image_tag @character.photo.key, height: 300, width: 400, crop: :fill %>
 <p>Category: <%= @character.category %></p>
 <p>Address: <%= @character.address %></p>
 <p>Description: <%= @character.description %></p>
