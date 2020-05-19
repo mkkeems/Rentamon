@@ -35,4 +35,8 @@
 
 <% if user_signed_in? %>
 <h2>WHATS UP <%= current_user.email%></h2>
+
+<%= link_to "See all available Characters", "/characters" %>
+<br>
+<%= link_to "Create Character", "/characters/new" %>
 <% end %>
