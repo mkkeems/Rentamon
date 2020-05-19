@@ -1,18 +1,19 @@
 <div class="new-form">
 
-<h1><%=@character.name%></h1>
-<p>Price: $<%= @character.price %>/day</p>
-<p>Category: <%= @character.category %></p>
-<p>Address: <%= @character.address %></p>
-<p>Description: <%= @character.description %></p>
-<p>Owner: <%=@character.user.email%></p>
+  <h1><%=@character.name%></h1>
+  <p>Price: $<%= @character.price %>/day</p>
+  <%= cl_image_tag @character.photo.key, height: 300, width: 400, crop: :fill %>
+  <p>Category: <%= @character.category %></p>
+  <p>Address: <%= @character.address %></p>
+  <p>Description: <%= @character.description %></p>
+  <p>Owner: <%=@character.user.email%></p>
 
-<% if policy(@character).edit? %>
-  <%= link_to "Update", edit_character_path(@character) %> |
-<% end %>
+  <% if policy(@character).edit? %>
+    <%= link_to "Update", edit_character_path(@character) %> |
+  <% end %>
 
-<% if policy(@character).destroy? %>
-  <%= link_to "Delete", character_path(@character), method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
+  <% if policy(@character).destroy? %>
+    <%= link_to "Delete", character_path(@character), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
 
 </div>

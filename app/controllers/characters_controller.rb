@@ -8,7 +8,7 @@ class CharactersController < ApplicationController
     @character = Character.new
     authorize @character
   end
-  
+
   def show
     @character = Character.find(params[:id])
     authorize @character
@@ -32,7 +32,7 @@ class CharactersController < ApplicationController
     @character = Character.find(params[:id])
     @character.update(character_params)
     authorize @character
-    
+
     redirect_to character_path(@character)
   end
 
@@ -46,7 +46,7 @@ class CharactersController < ApplicationController
   private
 
   def character_params
-    params.require(:character).permit(:name, :price, :description, :status, :category, :address)
+    params.require(:character).permit(:name, :price, :photo, :description, :status, :category, :address)
   end
 
 end
