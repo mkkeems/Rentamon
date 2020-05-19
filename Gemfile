@@ -28,6 +28,7 @@ gem 'cloudinary', '~> 1.12.0'
 # gem 'image_processing', '~> 1.2'
 
 gem 'devise'
+gem 'pundit'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
@@ -37,6 +38,7 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+
 
 group :development, :test do
   gem 'pry-byebug'
