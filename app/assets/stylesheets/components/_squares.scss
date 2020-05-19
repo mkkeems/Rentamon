@@ -1,0 +1,26 @@
+.squares {
+  width: 250px;
+  height: 250px;
+}
+
+
+.squares-pink {
+  background-color: #fe346e;
+  transform: rotate(45deg);
+  position: relative;
+}
+
+
+.squares-yellow {
+  background-color: #f1e7b6;
+  transform: rotate(35deg);
+  position: absolute;
+  bottom: 0px;
+}
+
+.squares-image {
+  position: absolute;
+  bottom: 0px;
+  width: 250px;
+  left: 0px;
+}
