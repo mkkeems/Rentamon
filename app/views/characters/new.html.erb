@@ -1,14 +1,14 @@
-<%= form_for(@character) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :address %>
-  <%= f.text_field :address %>
-  <%= f.label :price %>
-  <%= f.number_field :price %>
-  <%= f.label :category %>
-  <%= f.text_field :category %>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-  <%= f.submit %>
-<% end %>
+<div class="new-form">
+  <h2>Create a new character to book out</h2>
 
+  <%= simple_form_for @character do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :price %>
+    <%= f.input :category %>
+    <%= f.input :description %>
+    <div class="d-flex justify-content-center">
+    <%= f.submit "Create a Character", class:"btn btn-lg btn-success" %>
+    </div>
+  <% end %>
+</div>
