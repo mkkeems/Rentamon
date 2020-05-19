@@ -7,7 +7,7 @@
           <li>Price: $<%= character.price %>/day</li>
           <li>Category: <%= character.category %></li>
           <li>Address: <%= character.address %></li>
-          <li>Owner: <%=current_user.email%></li>
+          <li>Owner: <%=character.user.email%></li>
           <li><%= link_to "Click for details", character_path(character) %></li>
         </ul>
       </div>
