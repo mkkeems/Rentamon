@@ -3,4 +3,4 @@
 <p>Category: <%= @character.category %></p>
 <p>Address: <%= @character.address %></p>
 <p>Description: <%= @character.description %></p>
-<p>Owner: <%=current_user.email%></p>
+<p>Owner: <%=@character.user.email%></p>
