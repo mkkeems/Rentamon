@@ -19,7 +19,8 @@ a = User.create!(email: "rentamon@gmail.com", password: "396396")
     price: 100,
     status: true,
     category: "laundry",
-    address: "200 huahaizhonglu, shanghai, China"
+    address: "200 huahaizhonglu, shanghai, China",
+    description: "Cute"
     )
     q = Booking.create!(
       character: d,
@@ -41,7 +42,8 @@ a = User.create!(email: "rentamon@gmail.com", password: "396396")
       price: rand(20..50),
       status: true,
       category: Faker::Job.key_skill,
-      address: Faker::Address.full_address
+      address: Faker::Address.full_address,
+      description: Faker::Games::Pokemon.move
       )
     rand(1..4).times do
       b = Booking.create!(
