@@ -1,9 +1,9 @@
 <div class="container-fluid bg-success vh-auto d-flex justify-content-center">
   <div class="container-dashboard rounded">
-    <div class="text-center border-bottom" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "pallet_town.png" %>);">
-      <h1 class="head-dashboard">Welcome Back</h1>
+    <div class="text-center border-bottom head-dashboard" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "pallet_town.png" %>);">
+      <h1>Welcome Back <%= current_user.first_name %></h1>
       <img class="avatar-huge" alt="avatar-large" src="<%= image_path "ash.jpg" %>" />
-      <p class="name-dashboard mt-2">Ash Ketchum</p>
+      <p class="name-dashboard mt-2"></p>
     </div>
     <div>
       <div class="d-flex justify-content-between">
