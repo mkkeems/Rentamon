@@ -1,3 +1,22 @@
+.no-padding {
+  padding: 0;
+}
+
+.dash {
+  padding: 30px;
+  h1 {
+    font-family: "Walter Turncoat", "cursive";
+  }
+}
+
+.dash-sidebar {
+  background-color: #400082;
+ color: white;
+  height: 100vh;
+}
+
+
+
 
 //character cards
 
@@ -8,7 +27,6 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-top: 20px;
   margin-right: 20px;
-  color: black;
 }
 
 .card-trip > img {
@@ -50,24 +68,25 @@
 
 
 
-.container-dashboard {
-width: 1200px;
-height: 100%;
-background-color: #400082;
-color: white;
-}
+// .container-dashboard {
+// width: 1200px;
+// height: 100%;
+// background-color: #400082;
+// color: white;
+// }
 
-.head-dashboard{
-  font-family: "Walter Turncoat", "cursive";
-  padding: 30px;
-}
+// .head-dashboard{
+//   font-family: "Walter Turncoat", "cursive";
+//   padding: 30px;
+// }
 
-.name-dashboard {
-  font-family: "Roboto", "sans-serif";
-  font-size: 25px;
-  font-weight: bold;
-}
+// .name-dashboard {
+//   font-family: "Roboto", "sans-serif";
+//   font-size: 25px;
+//   font-weight: bold;
+// }
 
-.mychars {
-  margin: 40px 0;
+
+.dash-mybooks{
+  margin-top: 50px;
 }
