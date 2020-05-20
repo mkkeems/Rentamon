@@ -33,3 +33,38 @@
   color: white;
 }
 
+.btn-delete {
+  padding: 8px 24px;
+  background: #fe346e;
+  text-decoration: none;
+  color: white;
+  border-radius: 20px;
+  font-weight: bold;
+  opacity: 1.0;
+  font-size:20px;
+}
+
+.btn-delete:hover {
+  opacity: 0.6;
+  text-decoration: none;
+  color: white;
+}
+
+
+.btn-update {
+  padding: 8px 24px;
+  background: #400082;
+  text-decoration: none;
+  color: white;
+  border-radius: 20px;
+  font-weight: bold;
+  opacity: 1.0;
+  font-size:20px;
+}
+
+.btn-update:hover {
+  opacity: 0.6;
+  text-decoration: none;
+  color: white;
+}
+
