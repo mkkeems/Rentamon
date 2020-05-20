@@ -8,105 +8,35 @@
     <div>
       <div class="d-flex justify-content-between">
         <h1 class="ml-4 mt-4 head-dashboard">MY POKEMONS:</h1>
-        <%= link_to "Add new pokemon", "/characters/new", class: 'btn-add mr-4 mt-4' %>
+        <%= link_to "Add new pokemon", new_character_path, class: 'btn-add mr-4 mt-4' %>
       </div>
-      <div class="d-flex flex-wrap">
-        <div class="card m-4" style="width: 15rem;">
-          <div class="text-center">
-          <img src="<%= image_path "bulbasaur.png" %>" class="card-img-top" style="width: 10rem;" alt="...">
-          </div>
-          <div class="card-body">
-            <h5 class="card-title text-dark">Bulbasaur</h5>
-            <p class="card-text text-dark"><strong>Description:</strong> Laundry, wash, cook.</p>
-            <div class="text-center">
-              <a href="#" class="btn btn-primary">Details</a>
+
+    <div class="row d-flex justify-content-center mychars">
+      <%# <div class="d-flex"> %>
+        <% @characters.each do |character| %>
+          <div class="card-trip">
+          <% if character.photo.attached? %>
+            <%= cl_image_tag character.photo.key, crop: :fill%>
+            <% else %>
+            <img src="https://compote.slate.com/images/18ba92e4-e39b-44a3-af3b-88f735703fa7.png?width=780&height=520&rect=1560x1040&offset=0x0" alt="">
+            <% end %>
+            <div class="card-trip-infos">
+              <div>
+                <h2><%= link_to character.name, character_path(character) %></h2>
+                <p><%= character.description %></p>
+                <strong><%= link_to "Update", edit_character_path(character) %></strong>
+              </div>
+              <div class="card-trip-pricing">
+                <h2>$<%= character.price %>/day</h2>
+                <%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="card m-4" style="width: 15rem;">
-          <div class="text-center">
-          <img src="<%= image_path "bulbasaur.png" %>" class="card-img-top" style="width: 10rem;" alt="...">
-          </div>
-          <div class="card-body">
-            <h5 class="card-title text-dark">Bulbasaur</h5>
-            <p class="card-text text-dark"><strong>Description:</strong> Laundry, wash, cook.</p>
-            <div class="text-center">
-              <a href="#" class="btn btn-primary">Details</a>
-            </div>
-          </div>
-        </div>
-        <div class="card m-4" style="width: 15rem;">
-          <div class="text-center">
-          <img src="<%= image_path "bulbasaur.png" %>" class="card-img-top" style="width: 10rem;" alt="...">
-          </div>
-          <div class="card-body">
-            <h5 class="card-title text-dark">Bulbasaur</h5>
-            <p class="card-text text-dark"><strong>Description:</strong> Laundry, wash, cook.</p>
-            <div class="text-center">
-              <a href="#" class="btn btn-primary">Details</a>
-            </div>
-          </div>
-        </div>
-        <div class="card m-4" style="width: 15rem;">
-          <div class="text-center">
-          <img src="<%= image_path "bulbasaur.png" %>" class="card-img-top" style="width: 10rem;" alt="...">
-          </div>
-          <div class="card-body">
-            <h5 class="card-title text-dark">Bulbasaur</h5>
-            <p class="card-text text-dark"><strong>Description:</strong> Laundry, wash, cook.</p>
-            <div class="text-center">
-              <a href="#" class="btn btn-primary">Details</a>
-            </div>
-          </div>
-        </div>
-        <div class="card m-4" style="width: 15rem;">
-          <div class="text-center">
-          <img src="<%= image_path "bulbasaur.png" %>" class="card-img-top" style="width: 10rem;" alt="...">
-          </div>
-          <div class="card-body">
-            <h5 class="card-title text-dark">Bulbasaur</h5>
-            <p class="card-text text-dark"><strong>Description:</strong> Laundry, wash, cook.</p>
-            <div class="text-center">
-              <a href="#" class="btn btn-primary">Details</a>
-            </div>
-          </div>
-        </div>
-        <div class="card m-4" style="width: 15rem;">
-          <div class="text-center">
-          <img src="<%= image_path "bulbasaur.png" %>" class="card-img-top" style="width: 10rem;" alt="...">
-          </div>
-          <div class="card-body">
-            <h5 class="card-title text-dark">Bulbasaur</h5>
-            <p class="card-text text-dark"><strong>Description:</strong> Laundry, wash, cook.</p>
-            <div class="text-center">
-              <a href="#" class="btn btn-primary">Details</a>
-            </div>
-          </div>
-        </div>
-        <div class="card m-4" style="width: 15rem;">
-          <div class="text-center">
-          <img src="<%= image_path "bulbasaur.png" %>" class="card-img-top" style="width: 10rem;" alt="...">
-          </div>
-          <div class="card-body">
-            <h5 class="card-title text-dark">Bulbasaur</h5>
-            <p class="card-text text-dark"><strong>Description:</strong> Laundry, wash, cook.</p>
-            <div class="text-center">
-              <a href="#" class="btn btn-primary">Details</a>
-            </div>
-          </div>
-        </div><div class="card m-4" style="width: 15rem;">
-          <div class="text-center">
-          <img src="<%= image_path "bulbasaur.png" %>" class="card-img-top" style="width: 10rem;" alt="...">
-          </div>
-          <div class="card-body">
-            <h5 class="card-title text-dark">Bulbasaur</h5>
-            <p class="card-text text-dark"><strong>Description:</strong> Laundry, wash, cook.</p>
-            <div class="text-center">
-              <a href="#" class="btn btn-primary">Details</a>
-            </div>
-          </div>
-        </div>
-      </div>
+        <% end %>
+      <%# </div> %>
+    </div>
+
+
     </div>
   </div>
 </div>
