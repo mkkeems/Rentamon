@@ -1,17 +1,20 @@
 .new-form {
-  background: white;
-  width: 900px;
-
-  h2{
-    text-align: center;
-  }
-}
-
-.new-form-nu {
+  background-color: white;
+  box-shadow: 0 0 10px 10px rgba(211, 211, 211, 0.425);
   width: 600px;
   margin: 40px auto;
+  padding: 40px;
 
   h2{
     text-align: center;
   }
 }
+
+// .new-form-nu {
+//   width: 600px;
+//   margin: 40px auto;
+
+//   h2{
+//     text-align: center;
+//   }
+// }

@@ -1,4 +1,4 @@
-<div class="new-form-nu">
+<div class="new-form">
   <h2>Create a new character to book out</h2>
 
   <%= simple_form_for @character do |f| %>
@@ -9,7 +9,7 @@
     <%= f.input :category %>
     <%= f.input :description %>
     <div class="d-flex justify-content-center">
-    <%= f.submit "Create a Character", class:"btn btn-lg btn-success" %>
+    <%= f.submit "Add Character", class:"btn btn-lg btn-success" %>
     </div>
   <% end %>
 </div>
