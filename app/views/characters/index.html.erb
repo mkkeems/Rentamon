@@ -1,19 +1,26 @@
-<div class="container char-index">
-  <div class="row">
-    <% @characters.each do |character| %>
-      <div class="col-lg-3">
-        <div class="character-card">
-          <ul>
-            <li><h3><%= link_to character.name, character_path(character) %> </h3></li>
-            <li>Price: $<%= character.price %>/day</li>
-            <li>Category: <%= character.category %></li>
-            <li>Address: <%= character.address %></li>
-            <li>Owner: <%=character.user.email%></li>
-            <li><%= link_to "Click for details", character_path(character) %></li>
-          </ul>
-        </div>
+<div class="container-fluid vr-100 d-flex char-index">
+  <div class="char-all vr-100">
+    <div class="row d-flex justify-content-center">
+      <h4 class="m-2">POKEMONS AVAILABLE FOR YOUR SEARCH:</h1>
+      <div>
+        <% @characters.each do |character| %>
+            <div class="card-product m-4">
+              <img src="<%= image_path "bulbasaur.png" %>" />
+              <div class="card-product-infos">
+                <h2><%= link_to character.name, character_path(character) %></h2>
+                <p>Category: <%= character.description %></p>
+                <strong><p>Price: $<%= character.price %>/day</p></strong>
+              </div>
+            </div>
+        <% end %>
       </div>
-    <% end %>
+    </div>
+  </div>
+  <div class="char-map vr-100">
+    <h4 class="text-center m-2">POKEMON LOCATION:</h4>
+    <div class="mt-4">
+      <img src="<%= image_path "map.png" %>"/>
+    </div>
   </div>
 </div>
 
