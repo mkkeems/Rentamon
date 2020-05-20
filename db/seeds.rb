@@ -19,7 +19,7 @@ a = User.create!(email: "rentamon@gmail.com", password: "396396")
     price: 100,
     status: true,
     category: "laundry",
-    address: "200 huahaizhonglu, shanghai, China",
+    address: "Brazil",
     description: "Cute"
     )
 
@@ -41,7 +41,7 @@ b = User.create!(email: "rentamon2@gmail.com", password: "396396")
     price: 200,
     status: true,
     category: "construction",
-    address: "230 hengshanlu, shanghai, China",
+    address: "Seoul",
     description: "Smart, Good manner(?) if you are nice to him"
     )
 
