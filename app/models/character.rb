@@ -1,6 +1,8 @@
 class Character < ApplicationRecord
   CATEGORY = ["Laundry", "Cleaning", "Simple Chores", "Electrical", "Construction", "Babysitting", "Meal prep", "Tutoring", "Personal Training", "Transportation"]
 
+  scope :active, -> {where(active: true)}
+
   belongs_to :user
   has_one_attached :photo
   geocoded_by :address
@@ -12,5 +14,4 @@ class Character < ApplicationRecord
   validates :description, presence: true
   validates :address, presence: true
   validates :photo, presence: true
-
 end

@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
 
+  # needs to be nested under character
   def new
     @booking = Booking.new
   end
@@ -20,15 +21,17 @@ class BookingsController < ApplicationController
 
   def update
     @booking = Booking.find(params[:id])
+    # confirm booking in update
     @booking.update(booking_params)
   end
-
-
-
 
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :confirmed, :user_id, :character_id)
+    params.require(:booking).permit(:start_date, :end_date)
+  end
+
+  def booking_update_params
+    params.require(:booking).permit(:confirmed)
   end
 end
