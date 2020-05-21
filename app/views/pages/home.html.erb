@@ -6,16 +6,14 @@
       <h3 class="text-white font-sub">Famous characters for your home chores</h3>
       <div class="mt-4">
         <div class="d-flex justify-content-start">
-          <div class="mr-5 mt-2">
-              <%= link_to "FIND A CHARACTER", characters_path, class: 'btn-rento' %>
-          </div>
           <div class="mr-5 form-group form-inline">
-            <label>From: </label>
-            <input type="text" class="form-control">
-          </div>
-          <div class="mr-5 form-group form-inline">
-            <label>To: </label>
-            <input type="text" class="form-control">
+            <%= simple_form_for :search, method: "get" do |f| %>
+                  <div class="d-flex">
+                  <%= f.button :submit, "FIND A CHARACTER", class: "btn-rento mr-4" %>
+                  <%= f.input :from, as: :string, required: false, input_html: {class: "datepicker mr-4"} %>
+                  <%= f.input :to, as: :string, required: false, input_html: {class: "datepicker mr-4"} %>
+                  </div>
+                <% end %>
           </div>
         </div>
       </div>
