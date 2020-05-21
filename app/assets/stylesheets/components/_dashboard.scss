@@ -2,7 +2,7 @@
 //character cards
 
 .card-trip {
-  width: 25%;
+  width: 90%;
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -53,14 +53,16 @@
 .container-dashboard {
 width: 1200px;
 height: 100%;
-background-color: #400082;
+background-color: #f1f1f1;
 color: white;
 }
 
 .head-dashboard{
   font-family: "Walter Turncoat", "cursive";
   padding: 30px;
-  h1 {
+  font-size:30px;
+  color: black;
+  h3 {
     font-family: "Walter Turncoat", "cursive";
   }
 }
