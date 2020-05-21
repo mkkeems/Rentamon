@@ -5,9 +5,9 @@
     <%= f.input :name %>
     <%= f.input :photo, as: :file %>
     <%= f.input :address %>
-    <%= f.input :price %>
-    <%= f.input :category %>
-    <%= f.input :description %>
+    <%= f.input :price, label: "Price $/day", hint: "Price in USD" %>
+    <%= f.input :category, as: :radio_buttons, collection: Character::CATEGORY, wrapper: :vertical_collection_inline %>
+    <%= f.input :description, as: :text, input_html: {:rows => 4} %>
     <div class="d-flex justify-content-center">
     <%= f.submit "Add Character", class:"btn btn-lg btn-success" %>
     </div>

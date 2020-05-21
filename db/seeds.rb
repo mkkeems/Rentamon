@@ -10,7 +10,7 @@ Booking.destroy_all
 Character.destroy_all
 User.destroy_all
 
-
+category = Character::CATEGORY
 
 a = User.create!(email: "rentamon@gmail.com", password: "396396")
   pikachu = Character.create(
@@ -18,7 +18,7 @@ a = User.create!(email: "rentamon@gmail.com", password: "396396")
     user: a,
     price: 100,
     status: true,
-    category: "laundry",
+    category: category.sample,
     address: "Brazil",
     description: "Cute"
     )
@@ -40,7 +40,7 @@ b = User.create!(email: "rentamon2@gmail.com", password: "396396")
     user: b,
     price: 200,
     status: true,
-    category: "construction",
+    category: category.sample,
     address: "Seoul",
     description: "Smart, Good manner(?) if you are nice to him"
     )
