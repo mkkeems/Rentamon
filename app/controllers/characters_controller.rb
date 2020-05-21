@@ -6,7 +6,8 @@ class CharactersController < ApplicationController
     @markers = @characters.map do |character|
       {
         lat: character.latitude,
-        lng: character.longitude
+        lng: character.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { character: character })
       }
     end
   end

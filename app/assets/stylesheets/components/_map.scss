@@ -3,3 +3,16 @@
   position: sticky;
   top: 10px;
 }
+
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Arimo', sans-serif;
+}
+
+.radius{
+  border-radius: 50%
+}
