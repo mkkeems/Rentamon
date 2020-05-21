@@ -1,4 +1,5 @@
 class CharactersController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :index, :show ]
 
   def index
     @characters = policy_scope(Character).order(created_at: :desc).active.geocoded
@@ -10,7 +11,6 @@ class CharactersController < ApplicationController
     end
   end
 
-  
   def new
     @character = Character.new
     authorize @character
