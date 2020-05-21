@@ -17,7 +17,6 @@ a = User.create!(email: "rentamon@gmail.com", password: "396396")
     name: "Pikachu",
     user: a,
     price: 100,
-    status: true,
     category: category.sample,
     address: "Brazil",
     description: "Cute"
@@ -39,7 +38,6 @@ b = User.create!(email: "rentamon2@gmail.com", password: "396396")
     name: "Hulk",
     user: b,
     price: 200,
-    status: true,
     category: category.sample,
     address: "Seoul",
     description: "Smart, Good manner(?) if you are nice to him"

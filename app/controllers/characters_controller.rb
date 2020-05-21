@@ -1,8 +1,7 @@
 class CharactersController < ApplicationController
 
   def index
-    # @allcharacters = policy_scope(Character).order(created_at: :desc)
-    @characters = policy_scope(Character).order(created_at: :desc).geocoded
+    @characters = policy_scope(Character).order(created_at: :desc).active.geocoded
     @markers = @characters.map do |character|
       {
         lat: character.latitude,
@@ -11,6 +10,7 @@ class CharactersController < ApplicationController
     end
   end
 
+  
   def new
     @character = Character.new
     authorize @character
