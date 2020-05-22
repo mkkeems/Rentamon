@@ -1,21 +1,33 @@
 <div class="container-fluid vr-100 d-flex char-index">
   <div class="char-all vr-100">
     <div class="row d-flex justify-content-center">
-      <h4 class="m-2">POKEMONS AVAILABLE FOR YOUR SEARCH:</h1>
-      <div>
-        <% @characters.each do |character| %>
-            <div class="card-product m-4">
-              <%= cl_image_tag character.photo.key, crop: :fill %>
-              <div class="card-product-infos">
-                <h2><%= link_to character.name, character_path(character) %></h2>
-                <p>Category: <%= character.category %></p>
-                <strong><p>Price: $<%= character.price %>/day</p></strong>
-                <h2><%= link_to "+ more details", character_path(character) %></h2>
-              </div>
-            </div>
+      <div class="mt-4">
+        <h4 class="m-2">POKEMONS AVAILABLE FOR YOUR SEARCH:</h1>
+        <%= simple_form_for characters_path, method: :get do |f| %>
+          <div class="search-form-control form-group">
+            <%= text_field_tag :query,
+                params[:query],
+                class: "form-control string required",
+                placeholder: "Find your pokemon . . . pika pika"
+              %>
+              <%= submit_tag "Search", class: "btn btn-flat" %>
+          </div>
         <% end %>
-
-
+      </div>
+      <div class="row">
+        <% @characters.each do |character| %>
+        <div class="col-6 d-flex justify-content-center">
+          <div class="card-product m-4">
+            <%= cl_image_tag character.photo.key, crop: :fill %>
+            <div class="card-product-infos">
+              <h2><%= link_to character.name, character_path(character) %></h2>
+              <p>Category: <%= character.category %></p>
+              <strong><p>Price: $<%= character.price %>/day</p></strong>
+              <h2><%= link_to "+ more details", character_path(character) %></h2>
+            </div>
+          </div>
+        </div>
+        <% end %>
       </div>
     </div>
   </div>

@@ -46,11 +46,91 @@ b = User.create!(email: "rentamon2@gmail.com", password: "396396")
   puts "created hulk"
 
   hulk.photo.attach(io: URI.open('https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fblogs-images.forbes.com%2Frobcain%2Ffiles%2F2017%2F07%2FHulk.jpg'), filename: 'hulk.jpg', content_type: 'image/jpg')
-    z = Booking.create!(
+    v = Booking.create!(
       character: hulk,
       user: b,
       start_date: 2020-05-20,
       end_date: 2020-06-01,
+      confirmed: true
+      )
+
+  buzz= Character.create(
+    name: "Buzz",
+    user: a,
+    price: 23,
+    category: category.sample,
+    address: "Busan",
+    description: "handsome"
+    )
+
+  puts "created Buzz"
+
+  buzz.photo.attach(io: URI.open('https://i.pinimg.com/736x/67/1a/5e/671a5e550d91f7430bbfe111be76cab5.jpg'), filename: 'buzz.jpg', content_type: 'image/jpg')
+    n = Booking.create!(
+      character: buzz,
+      user: a,
+      start_date: 2020-07-20,
+      end_date: 2020-07-21,
+      confirmed: true
+      )
+
+  dragonair= Character.create(
+    name: "Dragonair",
+    user: b,
+    price: 430,
+    category: category.sample,
+    address: "Jeju-si",
+    description: "fast"
+    )
+
+  puts "created Dragonair"
+
+  dragonair.photo.attach(io: URI.open('https://i.pinimg.com/originals/b8/1e/18/b81e18a8277fa5ee43d765a3bb041c1a.jpg'), filename: 'dragonair.jpg', content_type: 'image/jpg')
+    m = Booking.create!(
+      character: dragonair,
+      user: b,
+      start_date: 2020-07-23,
+      end_date: 2020-07-27,
+      confirmed: true
+      )
+
+  snorlax= Character.create(
+    name: "Snorlax",
+    user: a,
+    price: 20,
+    category: category.sample,
+    address: "goyang-si",
+    description: "On sale"
+    )
+
+  puts "created Snorlax"
+
+  snorlax.photo.attach(io: URI.open('https://vignette.wikia.nocookie.net/pokemon/images/7/75/Snorlax_Pikachu%27s_Rescue_Adventure.png'), filename: 'snorlax.png', content_type: 'image/png')
+    y = Booking.create!(
+      character: snorlax,
+      user: b,
+      start_date: 2020-06-23,
+      end_date: 2020-07-27,
+      confirmed: true
+      )
+
+  blackwidow= Character.create(
+    name: "Blackwidow",
+    user: b,
+    price: 2000,
+    category: category.sample,
+    address: "pyongyang",
+    description: "Hulk's gf"
+    )
+
+  puts "created Blackwidow"
+
+  blackwidow.photo.attach(io: URI.open('https://www.hypable.com/wp-content/uploads/2013/05/the-avengers-2-full-page-square-scarlet-black.jpg'), filename: 'blackwidow.jpg', content_type: 'image/jpg')
+    c = Booking.create!(
+      character: blackwidow,
+      user: b,
+      start_date: 2020-05-23,
+      end_date: 2020-07-27,
       confirmed: true
       )
 # e = User.create!(email: "rentamon@gmail.com", password: "396396")
