@@ -3,10 +3,6 @@ class CharactersController < ApplicationController
 
   def index
     if params[:query].present?
-      query = "name ILIKE :query OR
-               category ILIKE :query OR
-               address ILIKE :query"
-
       @characters = policy_scope(Character)
                     .search_by_name_and_category_and_address(params[:query])
                     .order(created_at: :desc).active.geocoded
@@ -14,6 +10,7 @@ class CharactersController < ApplicationController
         {
           lat: character.latitude,
           lng: character.longitude
+          infoWindow: render_to_string(partial: "info_window", locals: { character: character })
         }
       end
     else
@@ -22,6 +19,7 @@ class CharactersController < ApplicationController
         {
           lat: character.latitude,
           lng: character.longitude
+          infoWindow: render_to_string(partial: "info_window", locals: { character: character })
         }
       end
     end
