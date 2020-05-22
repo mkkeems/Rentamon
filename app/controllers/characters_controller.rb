@@ -2,12 +2,28 @@ class CharactersController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
 
   def index
-    @characters = policy_scope(Character).order(created_at: :desc).active.geocoded
-    @markers = @characters.map do |character|
-      {
-        lat: character.latitude,
-        lng: character.longitude
-      }
+    if params[:query].present?
+      query = "name ILIKE :query OR
+               category ILIKE :query OR
+               address ILIKE :query"
+
+      @characters = policy_scope(Character)
+                    .search_by_name_and_category_and_address(params[:query])
+                    .order(created_at: :desc).active.geocoded
+      @markers = @characters.map do |character|
+        {
+          lat: character.latitude,
+          lng: character.longitude
+        }
+      end
+    else
+      @characters = policy_scope(Character).order(created_at: :desc).active.geocoded
+      @markers = @characters.map do |character|
+        {
+          lat: character.latitude,
+          lng: character.longitude
+        }
+      end
     end
   end
 
