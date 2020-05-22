@@ -6,26 +6,24 @@
     </div>
     <div class="active-chars">
     <%if Character.exists?(user_id: current_user.id, active: false) %>
-    <h1 class="ml-1 mt-1 head-dashboard"><u>Confirm Pending:</u></h1>
-    <div class="container">
-    
-    <div class="row">
-    <% @characters.each do |character| %>
-      <% if !character.active %>
-      <div class="col-xs-6 confirm-dash">
-        <div class="card-trip d-flex">
-          <div class="booking-img-dash">
-            <% if character.photo.attached? %>
-              <%= cl_image_tag character.photo.key, crop: :fill, class:"booking-img"%>
-            <% end %>
+      <h1 class="ml-1 mt-1 head-dashboard"><u>Confirm Pending:</u></h1>
+      <div class="container">
+      <div class="row">
+      <% @characters.each do |character| %>
+        <% if !character.active %>
+        <div class="col-xs-6 confirm-dash">
+          <div class="card-trip d-flex">
+            <div class="booking-img-dash">
+              <% if character.photo.attached? %>
+                <%= cl_image_tag character.photo.key, crop: :fill, class:"booking-img"%>
+              <% end %>
+            </div>
           </div>
         </div>
-      </div>
-      
+        <%end%>
       <%end%>
-    <%end%>
-    </div>
-    </div>
+      </div>
+      </div>
     <%end%>
     </div>
     
