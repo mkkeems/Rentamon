@@ -28,8 +28,8 @@ a = User.create!(email: "rentamon@gmail.com", password: "396396")
     q = Booking.create!(
       character: pikachu,
       user: a,
-      start_date: 2020-04-20,
-      end_date: 2020-05-01,
+      start_date: Date.new(2020-04-20),
+      end_date: Date.new(2020-05-01),
       confirmed: true
       )
 
@@ -49,8 +49,8 @@ b = User.create!(email: "rentamon2@gmail.com", password: "396396")
     v = Booking.create!(
       character: hulk,
       user: b,
-      start_date: 2020-05-20,
-      end_date: 2020-06-01,
+      start_date: Date.new(2020-05-20),
+      end_date: Date.new(2020-06-01),
       confirmed: true
       )
 
@@ -69,8 +69,8 @@ b = User.create!(email: "rentamon2@gmail.com", password: "396396")
     n = Booking.create!(
       character: buzz,
       user: a,
-      start_date: 2020-07-20,
-      end_date: 2020-07-21,
+      start_date: Date.new(2020-07-20),
+      end_date: Date.new(2020-07-21),
       confirmed: true
       )
 
@@ -89,8 +89,8 @@ b = User.create!(email: "rentamon2@gmail.com", password: "396396")
     m = Booking.create!(
       character: dragonair,
       user: b,
-      start_date: 2020-07-23,
-      end_date: 2020-07-27,
+      start_date: Date.new(2020-07-23),
+      end_date: Date.new(2020-07-27),
       confirmed: true
       )
 
@@ -109,8 +109,8 @@ b = User.create!(email: "rentamon2@gmail.com", password: "396396")
     y = Booking.create!(
       character: snorlax,
       user: b,
-      start_date: 2020-06-23,
-      end_date: 2020-07-27,
+      start_date: Date.new(2020-06-23),
+      end_date: Date.new(2020-07-27),
       confirmed: true
       )
 
@@ -129,8 +129,8 @@ b = User.create!(email: "rentamon2@gmail.com", password: "396396")
     c = Booking.create!(
       character: blackwidow,
       user: b,
-      start_date: 2020-05-23,
-      end_date: 2020-07-27,
+      start_date: Date.new(2020-05-23),
+      end_date: Date.new(2020-07-27),
       confirmed: true
       )
 # e = User.create!(email: "rentamon@gmail.com", password: "396396")
