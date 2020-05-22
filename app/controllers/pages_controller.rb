@@ -6,7 +6,8 @@ class PagesController < ApplicationController
   def dashboard
     # list of characters that belong to current user
     @user = current_user
-    @characters = Character.where(user_id: current_user.id).paginate(page: params[:page], per_page: 4)
+    @characters = Character.where(user_id: current_user.id).paginate(page: params[:page], per_page: 4).order(created_at: :desc)
+    @bookings = Booking.where(user_id: current_user.id).paginate(page: params[:page], per_page: 4).order(created_at: :desc)
 
     # bookings made as client, commented out cuz no bookings yet
     # @bookings = Bookings.where(user_id: current_user.id)

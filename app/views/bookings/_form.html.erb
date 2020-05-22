@@ -1,0 +1,9 @@
+<div class="new-form">
+  <h2>Book This Character!</h2>
+  <%= simple_form_for [@character, booking] do |f| %>
+    <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+    <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+    <%= f.submit "Book This Character", class:"btn btn-lg btn-success" %>
+    </div>
+  <% end %>
+</div>
