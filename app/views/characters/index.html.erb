@@ -14,17 +14,19 @@
           </div>
         <% end %>
       </div>
-      <div>
+      <div class="row">
         <% @characters.each do |character| %>
-            <div class="card-product m-4">
-              <%= cl_image_tag character.photo.key, crop: :fill %>
-              <div class="card-product-infos">
-                <h2><%= link_to character.name, character_path(character) %></h2>
-                <p>Category: <%= character.category %></p>
-                <strong><p>Price: $<%= character.price %>/day</p></strong>
-                <h2><%= link_to "+ more details", character_path(character) %></h2>
-              </div>
+        <div class="col-6 d-flex justify-content-center">
+          <div class="card-product m-4">
+            <%= cl_image_tag character.photo.key, crop: :fill %>
+            <div class="card-product-infos">
+              <h2><%= link_to character.name, character_path(character) %></h2>
+              <p>Category: <%= character.category %></p>
+              <strong><p>Price: $<%= character.price %>/day</p></strong>
+              <h2><%= link_to "+ more details", character_path(character) %></h2>
             </div>
+          </div>
+        </div>
         <% end %>
       </div>
     </div>
