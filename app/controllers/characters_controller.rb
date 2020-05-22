@@ -5,7 +5,7 @@ class CharactersController < ApplicationController
     if params[:query].present?
       @characters = policy_scope(Character)
                     .search_by_name_and_category_and_address(params[:query])
-                    .order(created_at: :desc).active.geocoded
+                    .active.geocoded.order(created_at: :desc)
       @markers = @characters.map do |character|
         {
           lat: character.latitude,
