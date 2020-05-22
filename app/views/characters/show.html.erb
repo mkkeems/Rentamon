@@ -25,6 +25,10 @@
               <% if policy(@character).destroy? %>
                 <%= link_to "Delete", character_path(@character), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-delete"%>
               <% end %>
+
+              <% if !policy(@character).owner? %>
+                <%= link_to "Book This Character", new_character_booking_path(@character), class: "btn-update" %>
+              <% end %>
             </div>
           </div>
         </div>

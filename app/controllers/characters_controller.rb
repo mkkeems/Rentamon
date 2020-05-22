@@ -41,7 +41,7 @@ class CharactersController < ApplicationController
     @character.save
     authorize @character
 
-    redirect_to "/characters"
+    redirect_to characters_path
   end
 
   def edit
@@ -61,7 +61,7 @@ class CharactersController < ApplicationController
     @character = Character.find(params[:id])
     @character.destroy
     authorize @character
-    redirect_to "/characters"
+    redirect_to characters_path
   end
 
   private

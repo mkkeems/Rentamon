@@ -14,12 +14,17 @@ class CharacterPolicy < ApplicationPolicy
   end
 
   def update?
-    record.user == user
+    owner?
     # - record: the restaurant passed to the `authorize` method in controller
     # - user:   the `current_user` signed in with Devise.
   end
 
   def destroy?
+    owner?
+  end
+
+  def owner?
     record.user == user
   end
+  
 end

@@ -49,34 +49,44 @@
         <div class="d-flex justify-content-between">
           <h1 class="ml-1 mt-1 head-dashboard"><u>MY BOOKINGS:</u></h1>
         </div>
-        <div class="row"><!--d-flex flex-nowrap mychars-->
-            <% @characters.each do |character| %>
-            <div class="col-6 d-flex justify-content-center">
-              <div class="card-trip ml-3">
-              <% if character.photo.attached? %>
-                <%= cl_image_tag character.photo.key, crop: :fill%>
-                <% else %>
-                <img src="https://compote.slate.com/images/18ba92e4-e39b-44a3-af3b-88f735703fa7.png?width=780&height=520&rect=1560x1040&offset=0x0" alt="">
-                <% end %>
-                <div class="card-trip-infos">
-                  <div>
-                    <h2><%= link_to character.name, character_path(character) %></h2>
-                    <p><%= character.description %></p>
-                    <strong><%= link_to "Update", edit_character_path(character) %></strong>
+
+            <% @bookings.each do |booking| %>
+              <div class="col-xs-12 d-flex justify-content-center">
+                <div class="card-trip booking-dash d-flex">
+                  <div class="booking-img-dash">
+                    <% if booking.character.photo.attached? %>
+                      <%= cl_image_tag booking.character.photo.key, crop: :fill, class:"booking-img"%>
+                    <% else %>
+                      <img src="https://compote.slate.com/images/18ba92e4-e39b-44a3-af3b-88f735703fa7.png?width=780&height=520&rect=1560x1040&offset=0x0" alt="">
+                    <% end %>
                   </div>
-                  <div class="card-trip-pricing">
-                    <h2>$<%= character.price %>/day</h2>
+                  <div class="booking-info-dash-1">
+                    <h2><%= booking.character.name %></h2>
+                    <p>Start Date: <%= booking.start_date.strftime("%B %-d %Y") %></p>
+                    <p>End Date: <%= booking.end_date.strftime("%B %-d %Y") %></p>
+                    <p>Duration: <%= ((booking.end_date - booking.start_date)/86400).floor %> days</p>
+                    <p>Total price: $<%= ((booking.end_date - booking.start_date)/86400).floor * booking.character.price %></p>
+                  </div>
+                  <div class="booking-info-dash-2">
+                    <p>Charcter Owner: <%= booking.character.user.first_name %></p>
+                    <strong>Confirmed? <%if !booking.confirmed %>
+                      Not Yet...
+                      <%elsif booking.confirmed %>
+                      Yes! :) Booking has been confirmed!
+                    <%end%>
+                    <%= booking.confirmed %>
+                    </strong>
                   </div>
                 </div>
               </div>
-            </div>
             <% end %>
-        </div>
+            
+
         <div class="apple_pagination">
             <div class="page_info" style="color: black;">
-              <%= page_entries_info @characters %>
+              <%= page_entries_info @bookings %>
             </div>
-            <%= will_paginate @characters, :container => false %>
+            <%= will_paginate @bookings, :container => false %>
         </div>
       </div>
     </div>
