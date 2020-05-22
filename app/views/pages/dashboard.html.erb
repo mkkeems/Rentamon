@@ -1,10 +1,34 @@
 <div class="container-fluid bg-success vh-auto d-flex justify-content-center">
   <div class="container-dashboard rounded">
     <div class="text-center border-bottom head-dashboard" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "pallet_town.png" %>);">
-      <h1 class="text-light">Welcome Back</h1>
+      <h1 class="text-light">Welcome Back, <%= current_user.first_name %> :)</h1>
       <img class="avatar-huge" alt="avatar-large" src="<%= image_path "ash.jpg" %>" />
-      <p class="name-dashboard mt-2 text-light"><%= current_user.first_name %></p>
     </div>
+    <div class="active-chars">
+    <%if Character.exists?(user_id: current_user.id, active: false) %>
+    <h1 class="ml-1 mt-1 head-dashboard"><u>Confirm Pending:</u></h1>
+    <div class="container">
+    
+    <div class="row">
+    <% @characters.each do |character| %>
+      <% if !character.active %>
+      <div class="col-xs-6 confirm-dash">
+        <div class="card-trip d-flex">
+          <div class="booking-img-dash">
+            <% if character.photo.attached? %>
+              <%= cl_image_tag character.photo.key, crop: :fill, class:"booking-img"%>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      
+      <%end%>
+    <%end%>
+    </div>
+    </div>
+    <%end%>
+    </div>
+    
     <div class="d-flex">
       <div class="border-right" style="width: 50%">
         <div class="d-flex justify-content-between align-items-center">
@@ -74,7 +98,6 @@
                       <%elsif booking.confirmed %>
                       Yes! :) Booking has been confirmed!
                     <%end%>
-                    <%= booking.confirmed %>
                     </strong>
                   </div>
                 </div>
