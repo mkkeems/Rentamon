@@ -12,7 +12,9 @@ User.destroy_all
 
 category = Character::CATEGORY
 
-a = User.create!(email: "rentamon@gmail.com", password: "396396", first_name: "HyeJeong" last_name: "Kwon")
+c=User.create!(email: "boop@gmail.com", password: "123123", first_name: "Michelle", last_name: "Kim")
+
+a = User.create!(email: "rentamon@gmail.com", password: "396396", first_name: "HyeJeong", last_name: "Kwon")
   pikachu = Character.create(
     name: "Pikachu",
     user: a,
@@ -33,7 +35,7 @@ a = User.create!(email: "rentamon@gmail.com", password: "396396", first_name: "H
       confirmed: true
       )
 
-b = User.create!(email: "rentamon2@gmail.com", password: "396396", first_name: "Yiro" last_name: "Yi")
+b = User.create!(email: "rentamon2@gmail.com", password: "396396", first_name: "Yiro", last_name: "Yi")
   hulk = Character.create(
     name: "Hulk",
     user: b,
