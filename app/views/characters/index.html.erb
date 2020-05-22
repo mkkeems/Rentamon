@@ -1,6 +1,6 @@
 <div class="container-fluid vr-100 d-flex char-index">
   <div class="char-all vr-100">
-    <div class="row d-flex justify-content-center">
+    <div class="row d-flex justify-content-center" data-controller="search"><!--HERE IS DATA-CONTROLLER JS FOR SEARCH RESULTS-->
       <div class="mt-4">
         <h4 class="m-2">POKEMONS AVAILABLE FOR YOUR SEARCH:</h1>
         <%= simple_form_for characters_path, method: :get do |f| %>
@@ -13,11 +13,18 @@
               <%= submit_tag "Search", class: "btn btn-flat" %>
           </div>
         <% end %>
+        <!--<div class="search-form-control form-group">
+            <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+            <button class="btn btn-flat" data-action="click->search#refresh">
+              <i class="fas fa-search"></i> Search
+            </button>
+          </div>-->
       </div>
-      <div class="row">
+      <!--<div class="row" data-target="search.count" id="card-pokemon">HERE IS THE TARGET JS FOR SEARCH RESULTS-->
+      <div class="row mr-2" data-target="search.count">
         <% @characters.each do |character| %>
-        <div class="col-6 d-flex justify-content-center">
-          <div class="card-product m-4">
+        <div class="col-6 d-flex justify-content-around" id="search-result-card">
+          <div class="card-product"><!--POKECARD-->
             <%= cl_image_tag character.photo.key, crop: :fill %>
             <div class="card-product-infos">
               <h2><%= link_to character.name, character_path(character) %></h2>

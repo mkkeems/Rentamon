@@ -10,7 +10,8 @@ class CharactersController < ApplicationController
         {
           lat: character.latitude,
           lng: character.longitude,
-          infoWindow: render_to_string(partial: "info_window", locals: { character: character })
+          #infoWindow: render_to_string(partial: "info_window", locals: { character: character })
+          infoWindow: render_to_string(partial: "info_window", formats: [:html], locals: { character: character })
         }
       end
     else
@@ -19,9 +20,14 @@ class CharactersController < ApplicationController
         {
           lat: character.latitude,
           lng: character.longitude,
-          infoWindow: render_to_string(partial: "info_window", locals: { character: character })
+          #infoWindow: render_to_string(partial: "info_window", locals: { character: character })
+          infoWindow: render_to_string(partial: "info_window", formats: [:html], locals: { character: character })
         }
       end
+    end
+    respond_to do |format|
+      format.html
+      format.json { render json: { characters: @characters } }
     end
   end
 
