@@ -1,6 +1,6 @@
 Fantasy character renting market place web app
 Built on: Ruby on Rails, HTML, SCSS, Bootstrap, JS, Active Record
-Hoested on: Heroku
+\n Hoested on: Heroku
 
 Check it out here: https://rentamon-mkkeems.herokuapp.com/
 
